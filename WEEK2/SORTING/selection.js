@@ -17,3 +17,5 @@ function selectionSort(arr){
 }
 
 console.log(selectionSort([10,20,14,37,13]))
+
+//set the minimum element as the first element .then after we have to check that any minimum elemnt is leass than the minIndex

@@ -12,3 +12,12 @@ function reverseStr(str){
     return rev
 }
 console.log(reverseStr('ashika'))
+
+// function reverseStack(arr){
+//     let stack=[]
+//     while(arr.length){
+//         stack.push(arr.pop())
+//     }
+//     return stack
+// }
+// console.log(reverseStack([1,2,3,4,5,6]))
