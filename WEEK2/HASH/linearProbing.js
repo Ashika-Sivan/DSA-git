@@ -41,5 +41,5 @@ let ht = new HashTable(5);
 ht.insert(1, "A");
 ht.insert(6, "B"); // collision, goes to next slot
 ht.insert(11, "C"); // collision chain
-console.log(ht.search(6)); // "B"
-console.log(ht.table);
+// console.log(ht.search(6)); // "B"
+// console.log(ht.table);
