@@ -4,12 +4,12 @@ function findSecondLarges(root){
        }
        let curr=root
        while(curr){
-           if(curr.right && !curr.right.left && !curr.right.left){
+           if(curr.right && !curr.right.left && !curr.right.right){
                return curr.value
            }
            
            if(!curr.right && curr.left){
-               return 
+               return findSecondLarges(curr.left)
            }
        }
    }

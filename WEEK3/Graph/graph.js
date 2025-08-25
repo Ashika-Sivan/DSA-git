@@ -23,6 +23,11 @@ class Graph{
         this.adjList[vertex1]=this.adjList[vertex1].filter((v)=>v!==vertex2)
         this.adjList[vertex2]=this.adjList[vertex2].filter((v)=>v!==vertex1)
     }
+
+    DFS(){
+        let stack=[]
+        
+    }
     
 
 }

@@ -1,3 +1,5 @@
+
+//BST
 class Node{
     constructor(value){
         this.value=value
@@ -5,46 +7,71 @@ class Node{
         this.right=null
     }
 }
-
-class binarySearchTree{
+class BST{
     constructor(){
         this.root=null
     }
-
     isEmpty(){
-        return this.root ===null
+        return this.root===null
     }
-
     insert(value){
-        let newNode=new Node(value)
-        if(this.isEmpty()){
-            this.root=newNode
-        }else{
-            this.insertNode(this.root,value)
-        }
+       let node=new Node(value)
+       if(this.isEmpty()){
+           this.root=node
+           return 
+       }else{
+           this.insertNode(this.root,node)
+       }
     }
-
-    insertNode(root,value){
-        if(newNode.value<this.root){
+    insertNode(root,node){
+        if(node.value<root.value){
             if(root.left===null){
-                root.left=newNode
+                root.left=node
             }else{
-                this.insertNode(root.left,newNode)
+                this.insertNode(root.left,node)
             }
-
         }else{
             if(root.right===null){
-                root.right=newNode
+                root.right=node
             }else{
-                return this.insertNode(root.right,newNode)
+                this.insertNode(root.right,node)
             }
         }
-
-
+    }
+      preOrder(root){
+        if(root){
+            console.log(root.value)
+            this.preOrder(root.left)
+            this.preOrder(root.right)
+        }
+    }
+    
+    postOrder(root){
+        if(root){
+            this.postOrder(root.left)
+            this.postOrder(root.right)
+            console.log(root.value)
+        }
+    }
+    
+    BFS(){
+        let queue=[this.root]
+        while(queue.length){
+            let curr=queue.shift()
+            console.log(curr.value)
+            if(curr.left){
+                queue.push(curr.left)
+            }
+            if(curr.right){
+                queue.push(curr.right)
+            }
+        }
     }
 }
-const bst=new binarySearchTree()
-console.log('tree is empty ?',bst.isEmpty())
+const bst=new BST()
 bst.insert(10)
 bst.insert(20)
+bst.insert(40)
 bst.insert(30)
+// bst.preOrder(bst.root)
+bst.postOrder(bst.root)

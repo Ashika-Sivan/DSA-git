@@ -52,6 +52,24 @@ class Trie{
             }
             node=node.child[char]
         }
-        this.collect(node.child)
+        this.collect(node,prefix,res)
+        return res
+    }
+    collect(node,prefix,res){
+        if(node.isEnd){
+             res.push(prefix)
+        }
+
+        for(let char in node.child){
+            this.collect(node.child[char],prefix+CharacterData,res)
+        }
     }
 }
+let trie=new Trie()
+trie.insert('as')
+trie.insert('ash')
+trie.insert('ashika')
+trie.insert('bel')
+trie.insert('belwin')
+trie.insert('devan')
+trie.autoComplete('as')
