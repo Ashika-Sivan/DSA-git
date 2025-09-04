@@ -30,10 +30,10 @@ function isPerfect(node,depth,level=0){//here the start level that is root is 0
     if(node.left==null && node.right==null){
         return depth==level+1;
     }
-    if(node.left==null && node.right==null){
+    if(node.left==null||node.right==null){
         return false
     }
-    return isPerfect(node.left,depth,level+1&& isPerfect(node.right,depth,level+1))
+    return isPerfect(node.left,depth,level+1)&& isPerfect(node.right,depth,level+1)
 
 }
 

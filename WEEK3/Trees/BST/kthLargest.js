@@ -2,18 +2,18 @@
 //     let count=0
 //     let res=null
     
-//     function inorderTraversal(node){
-//         if(!node || node.left!==null){
+//     function reverseOrder(node){
+//         if(!node || res!==null){
 //             return
 //         }
-//         inorderTraversal(node.left)
+//         inorderTraversal(node.right)
 //         count++
         
 //         if(count==k){
 //             res=node.value
 //             return 
 //         }
-//         inorderTraversal(node.right)
+//         inorderTraversal(node.left)
         
         
 //     }

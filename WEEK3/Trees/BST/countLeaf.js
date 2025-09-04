@@ -19,4 +19,17 @@ class TreeNode{
     }
 
 
+     
+    function countLeafNode(root){
+        if(root==null){
+            return 0
+        }
+        if(root.left==null && root.right===null){
+            return root.value
+            
+        }
+        return countLeafNode(root.left)+countLeafNode(root.right)
+    }
+
+
     //if the node which doesnt have child node(left or right node) it is a leaf node    

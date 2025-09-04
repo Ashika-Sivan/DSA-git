@@ -6,13 +6,13 @@ function clonedGraph(node){
     let visited=new Map()
     function DFS(original){
         if(visited.has(original)){
-            return visited.set(original.val)
+            return visited.get(original.val)
         }
 
         let cloned=new Node(original.val,[])
-        visited.get(original,cloned)
+        visited.set(original,cloned)
 
-        for(let n of original){
+        for(let n of original.neighbours){
             let cloneNeigh=DFS(n)
             cloned.neighbours.push(cloneNeigh)
         }

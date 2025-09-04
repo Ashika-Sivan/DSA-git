@@ -59,3 +59,11 @@ class Heap{
         console.log(this.heap)
     }
 }
+
+
+let heap=new Heap()
+heap.insert(10)
+heap.insert(20)
+heap.insert(30)
+heap.insert(40)
+heap.insert(50)
