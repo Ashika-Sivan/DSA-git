@@ -61,7 +61,7 @@ class Trie{
         }
 
         for(let char in node.child){
-            this.collect(node.child[char],prefix+CharacterData,res)
+            this.collect(node.child[char],prefix+char,res)
         }
     }
 }

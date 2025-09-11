@@ -1,8 +1,3 @@
-//inorder to check the binary tree is perfect or not,we have to  check the depth of th etree
-
-//HERE DEPTH MEANS :-levels
-//so we have to iterate the tree from the  root to node===null,so first we have to find the depthe of the tree 
-
 class Node{
     constructor(value){
         this.value=value
@@ -12,32 +7,40 @@ class Node{
 }
 
 function findDepth(node){
-    let depth=0
-    while(node!==null){
-        depth++
-        node=node.left
+    if(!node){
+        return 0
     }
-    return depth
+    let leftDepth=findDepth(node.left)
+    let rightDepth=findDepth(node.right)
+    return Math.max(leftDepth,rightDepth)+1//counting each level +1
 }
 
-
-function isPerfect(node,depth,level=0){//here the start level that is root is 0
-    //base case
-    if(node==null){
+function isPerfect(node,depth,level=0){
+    if(!node){
         return true
     }
-    //leaf node check
-    if(node.left==null && node.right==null){
-        return depth==level+1;
+
+    if(!node.left && !node.right){
+        return depth===level+1
     }
-    if(node.left==null||node.right==null){
+    if(!node.left || !node.right){
         return false
     }
     return isPerfect(node.left,depth,level+1)&& isPerfect(node.right,depth,level+1)
-
 }
 
-function checkPerfectBinary(root){
+function checkPerfectBinaryTree(root){
     const depth=findDepth(root)
     return isPerfect(root,depth)
 }
+
+
+const root = new Node(10);
+root.left = new Node(10);
+root.right = new Node(5);
+root.left.right = new Node(20);
+root.left.left = new Node(7);
+root.right.left = new Node(30);
+root.right.right = new Node(25);
+
+console.log(checkPerfectBinaryTree(root));

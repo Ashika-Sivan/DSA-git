@@ -10,7 +10,7 @@ class Heap{
     bubblesUp(index){
         while(index>0){
             let parentIndex=Math.floor((index-1)/2)
-            if(this.heap[parentIndex]>this.heap[index]){
+            if(this.heap[parentIndex]>=this.heap[index]){
                 break
             }
             this.heap[parentIndex,this.heap[index]]=[this.heap[index],this.heap[parentIndex]]
@@ -34,7 +34,7 @@ class Heap{
             let left=2*index+1
             let right=2*index+2
 
-            if(left<this.heap.length && this.heap[largest<this.heap[left]]){
+            if(left<this.heap.length && this.heap[largest]<this.heap[left]){
                 largest=left
             }
             if(left<this.heap.length && this.heap[largest]<this.heap[right]){
