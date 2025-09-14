@@ -11,7 +11,7 @@ function finding(root){
     return isPrfect(root,depth,level)
 }
 
-function findDEpth(node){
+function findDepth(node){
     let depth=0
     while(node){
         depth++
@@ -30,5 +30,5 @@ function isPrfect(node,depth,level=1){
     if(node.left==null || node.right===null){
         return false
     }
-    return isPerfect(node.left,depth,level+1)&&isPrfect(node.right,depth,level+1)
+    return isPrfect(node.left,depth,level+1)&&isPrfect(node.right,depth,level+1)
 }

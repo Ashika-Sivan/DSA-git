@@ -14,6 +14,7 @@ class Heap{
                 break
             }
             this.heap[parentIndex,this.heap[index]]=[this.heap[index],this.heap[parentIndex]]
+            index=parent
         }
     }
     deleteRooot(){
@@ -21,7 +22,7 @@ class Heap{
             return null
         }
         if(this.heap.length===1){
-            this.heap.pop()
+            return this.heap.pop()
         }
         let root=this.heap[0]
         this.heap[0]=this.heap.pop()

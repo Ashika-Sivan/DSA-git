@@ -10,10 +10,10 @@ function shortestPath(g, start, end) {
             return path;
         }
 
-        for (let neighbor of g.adjList.get(node)) {
+        for (let neighbor of this.adjecencyList[node]) { // 6️⃣ explore neighbors
             if (!visited.has(neighbor)) {
-                visited.add(neighbor);
-                queue.push([...path, neighbor]);
+                visited.add(neighbor)
+                queue.push([...path, neighbor]) // 7️⃣ extend path with this neighbor
             }
         }
     }

@@ -25,7 +25,7 @@ function isPerfect(node,depth,level=0){
     }
     if(!node.left || !node.right){
         return false
-    }
+    } 
     return isPerfect(node.left,depth,level+1)&& isPerfect(node.right,depth,level+1)
 }
 
