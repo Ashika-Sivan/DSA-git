@@ -1,13 +1,13 @@
-//stack using queue
+//implement queue using stack
 class Stack{
     constructor(value){
-        const items=new Array()
+        this.items=new Array()
     }
     isEmpty(){
         return this.items.length===0
     }
     push(value){
-        return this.items.push(value)
+        this.items.push(value)
     }
     pop(){
         if(this.isEmpty()){
@@ -17,44 +17,110 @@ class Stack{
     }
     peek(){
         if(this.isEmpty()){
-            return 'list is emoty'
+            return 'underflow'
         }
         return this.items[this.items.length-1]
     }
-
     print(){
-        console.log(this.items.toString());
-        
+        console.log(this.items.toString())
     }
 }
-
 class Queue{
     constructor(){
-        const stack1=new Stack()
-        const stack2=new Stack()
+        this.stack1=new Stack()
+        this.stack2=new Stack()
     }
     isEmpty(){
-        return this.stack1.length===0
+        return this.stack1.isEmpty()
     }
-
     enqueue(value){
-        while(!this.stack1.isEmpty()){
-            return this.stack2.push(this.stack1.pop())
+        while(!this.stack1.isEmpty()){//now stack has some value
+             this.stack2.push(this.stack1.pop())
         }
         this.stack1.push(value)
         while(!this.stack2.isEmpty()){
-            return this.stack1.push(this.stack2.pop())
+             this.stack1.push(this.stack2.pop())
         }
     }
-
+    dequeue(){
+        if(this.isEmpty()){
+            return 'underflow'
+        }
+        return this.stack1.pop()
+    }
     front(){
         if(this.stack1.isEmpty()){
             return null
-        }return stack1.peek()
+        }
+        return this.stack1.peek()
     }
-
     display(){
-        console.log(this.stack1.toString());
-        
+        this.stack1.print()
     }
 }
+let queue=new Queue()
+queue.enqueue(4)
+queue.enqueue(6)
+queue.enqueue(7)
+queue.display()
+console.log(queue.dequeue())
+console.log(queue.front())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
