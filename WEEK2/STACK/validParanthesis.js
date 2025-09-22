@@ -12,7 +12,7 @@
 //             }
 //         }
 //     }
-//     return stack.length===0
+//     return stacmmk.length===0
     
 // }
 // console.log(validParanthesis("()[]{}"))

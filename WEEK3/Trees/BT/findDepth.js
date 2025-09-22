@@ -35,4 +35,4 @@ root.right.right = new Node(6);
 
 // The shortest path is 1 -> 3 -> 6, with a depth of 3.
 // The code will correctly handle the null left child of node 3.
-console.log("The minimum depth of the tree is:", minDepth(root));
+console.log("The minimum depth of the tree is:", findMinDepth(root));
