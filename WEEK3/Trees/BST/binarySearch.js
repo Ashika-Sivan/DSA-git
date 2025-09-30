@@ -38,6 +38,20 @@ class BST{
             }
         }
     }
+
+     search(root,value){
+        if(root){
+            if(root.value===value){
+                return true
+            }else if(value<root.value){
+                this.search(root.left,value)
+            }else{
+                this.search(root.right,value)
+            }
+        }
+        return false
+    }
+    
       preOrder(root){
         if(root){
             console.log(root.value)

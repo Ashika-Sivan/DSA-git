@@ -15,7 +15,7 @@ function height(root){
     let rightHeight=height(root.right)
     
     
-    return Math.max(leftHeight,rightHeight)+1
+    return Math.max(leftHeight,rightHeight)+1//level
 }
 
 let root=new Node(0)
