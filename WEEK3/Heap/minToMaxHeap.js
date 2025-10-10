@@ -1,3 +1,5 @@
+//find the nth smallest
+
 class Heap{
     constructor(){
         this.heap=[]
@@ -13,7 +15,7 @@ class Heap{
             if(this.heap[parentIndex]>=this.heap[index]){
                 break
             }
-            this.heap[parentIndex,this.heap[index]]=[this.heap[index],this.heap[parentIndex]]
+            [this.heap[parentIndex],this.heap[index]]=[this.heap[index],this.heap[parentIndex]]
             index=parentIndex
         }
     }
@@ -52,10 +54,19 @@ class Heap{
     
 
     }
-    // get right child
-     getRightChild(index){
-       return (2*index+2<this.heap.length)?this.heap[2*index+2]:null
-   }
+    //nth smallest from min heap
+     nthSmallest(n){
+    if(n<=0||n>this.heap.length){
+        return null
+    }
+    let temp=[...this.heap]
+    let val
+    for(let i=0;i<n;i++){
+        val=this.deleteRooot()
+    }
+    this.heap=temp
+    return val
+}
     swap(i,j){
         [this.heap[i],this.heap[j]]=[this.heap[j],this.heap[i]]
     }
@@ -63,8 +74,18 @@ class Heap{
     print(){
         console.log(this.heap)
     }
+    //nth smallest from max heap
+  
 }
 
+
+function convertMinToMax(minHeapArr){
+    let heap=new Heap()
+    for(let val of minHeapArr){
+        heap.insert(val)
+    }
+    return heap.heap
+}
 
 let heap=new Heap()
 heap.insert(10)
@@ -72,20 +93,7 @@ heap.insert(20)
 heap.insert(30)
 heap.insert(40)
 heap.insert(50)
-console.log(heap.print())
+heap.print()
+console.log(heap.nthSmallest(4))
+console.log(convertMinToMax([1,3,5,7,9]))
 
-
-
-//CAN SORT THE ARRAY USING THE HEAP SORT
-
-function heapSort(arr) {
-    let heap = new Heap();
-    for (let val of arr) heap.insert(val);
-    let sorted = [];
-    while (heap.heap.length) {
-        sorted.unshift(heap.deleteRooot()); // Extract max
-    }
-    return sorted;
-}
-
-console.log(heapSort([10, 20, 5, 30, 15])); // [5, 10, 15, 20, 30]

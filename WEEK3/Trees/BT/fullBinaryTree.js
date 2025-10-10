@@ -62,17 +62,13 @@
 ///ORIGINAL CORRECTED VERSION OF THE BINARY TREE IS FULL
 
 function fullBinaryTree(root){
-    if(!root){
-        return 0
-    }
+    if(root==null)return true
 
     if(!root.left && !root.right){
         return true
     }
 
-    if(root.left && root.right){
-        return fullBinaryTree(root.left)&& fullBinaryTree(root.right)
-    }
-    return false
+    if(!root.left||!root.right)return false
+    return fullBinaryTree(root.left)&&fullBinaryTree(root.right)
 }
 

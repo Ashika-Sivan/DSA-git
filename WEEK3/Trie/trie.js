@@ -64,12 +64,48 @@ class Trie{
             this.collect(node.child[char],prefix+char,res)
         }
     }
+
+    longestPrefix(word){
+        let node=this.root
+        let prefix=''
+        let longest=''
+        for(let char of word){
+            if(!node.child[char]){
+                break
+            }
+            node=node.child[char]
+            prefix+=char
+        }
+        if(node.isEnd){
+            longest=prefix
+        }
+        return longest
+    }
 }
-let trie=new Trie()
-trie.insert('as')
-trie.insert('ash')
-trie.insert('ashika')
-trie.insert('bel')
-trie.insert('belwin')
-trie.insert('devan')
-trie.autoComplete('as')
+
+let strs = ["flower","flow","flight"]
+const trie=new Trie()
+for(let word of strs){
+    console.log(word)
+    trie.insert(word)
+}
+// trie.insert('flower')
+// trie.insert('flow')
+// trie.insert('flight')
+console.log(trie.longestPrefix())
+
+
+
+
+
+
+
+
+// let trie=new Trie()
+// trie.insert('as')
+// trie.insert('ash')
+// trie.insert('ashika')
+// trie.insert('bel')
+// trie.insert('belwin')
+// trie.insert('devan')
+// trie.autoComplete('as')
