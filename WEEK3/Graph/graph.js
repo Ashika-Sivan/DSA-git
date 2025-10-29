@@ -5,7 +5,7 @@ class Graph{
     }
     addVertex(vertex){
         if(!this.adjecencyList[vertex]){
-            this.adjecencyList[vertex]=[]
+            this.adjecencyList[vertex]= []
         }
     }
     addEdge(vertex1,vertex2){
@@ -43,6 +43,12 @@ class Graph{
         return res
         
     }
+    degreeOfNode(vertex){
+        if(!this.adjecencyList[vertex]){
+            return 0
+        }
+        return this.adjecencyList[vertex].length
+    }
     
     print(){
         for(let vertex in this.adjecencyList){
@@ -53,9 +59,11 @@ class Graph{
 }
 let g=new Graph()
 g.addEdge("A", "B");
-g.addEdge("A", "C");
+// g.addEdge("A", "C");
 g.addEdge("B", "D");
 g.addEdge("C", "E");
 g.addEdge("D", "E");
-console.log("DFS from A:", g.DFS("A"));
-g.print()
+// console.log("DFS from A:", g.DFS("A"));
+// g.print()
+console.log(g.adjecencyList)
+console.log('........',g.degreeOfNode('A'));

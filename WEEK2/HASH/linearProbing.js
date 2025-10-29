@@ -14,7 +14,7 @@ class HashTable {
 
         while (this.table[index] !== null && this.table[index].key !== key) {
             index = (index + 1) % this.size;
-            if (index === startIndex) {
+            if (index === startIndex) {//hash cheyth start indexlott vann appa cycle form cheyth 
                 console.log("Hash table is full!");
                 return;
             }

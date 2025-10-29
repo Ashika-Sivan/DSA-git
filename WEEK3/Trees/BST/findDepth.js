@@ -1,8 +1,12 @@
 // Simple node structure
-function Node(data) {
-    this.data = data;
+class Node{ 
+    constructor(){
+         this.data = data;
     this.left = null;
     this.right = null;
+
+    }
+   
 }
 
 // Function to find depth

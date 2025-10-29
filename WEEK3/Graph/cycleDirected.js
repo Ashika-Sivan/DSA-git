@@ -21,7 +21,7 @@ function hasCycleDirected(graph){
             if(DFS(node))return true
         }
     }
-   return true
+   return false
 }
 
 const graph = new Map([
@@ -38,7 +38,6 @@ if(res){
 }else{
     console.log('graph has no cycle')
 }
-
 
 
 

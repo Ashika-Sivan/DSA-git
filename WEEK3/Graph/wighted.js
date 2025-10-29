@@ -20,7 +20,7 @@ class Graph{
 
     deleteEdge(){
         this.adjecencyList[vertex1]=this.adjecencyList[vertex1].filter((x)=>x.node!==vertex2)
-        this.adjecencyList[vertex1]=this.adjecencyList[vertex1].filter((x)=>x.node!==vertex2)
+        this.adjecencyList[vertex2]=this.adjecencyList[vertex2].filter((x)=>x.node!==vertex1)
     }
     DFS(start){
         const stack=[start]

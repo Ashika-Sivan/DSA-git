@@ -18,9 +18,9 @@ class TreeNode{
         return countLeafNode(root.left)+countLeafNode(root.right)
     }
 
-
+//sum of leaf node
      
-    function countLeafNode(root){
+    function sumOfLeaf(root){
         if(root==null){
             return 0
         }

@@ -109,3 +109,4 @@ console.log(trie.longestPrefix())
 // trie.insert('belwin')
 // trie.insert('devan')
 // trie.autoComplete('as')
+          
