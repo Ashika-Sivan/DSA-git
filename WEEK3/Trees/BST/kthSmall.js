@@ -16,7 +16,7 @@ function kthSmall(){
         }
 
         if(count===k){
-            res.node.value
+            res=node.value
             return 
         }
           inorder(node.right)

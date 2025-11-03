@@ -8,7 +8,7 @@ class Node{
 
 function finding(root){
     let depth=findDepth(root)
-    return isPrfect(root,depth,level)
+    return isPrfect(root,depth)
 }
 
 function findDepth(node){

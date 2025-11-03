@@ -8,7 +8,7 @@ function thirdLargest(){
         
         if(count===3){
             res=node.value
-            retrun 
+            return 
         }
         reversing(node.left)
         
