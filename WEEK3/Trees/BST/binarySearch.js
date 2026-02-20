@@ -81,6 +81,16 @@ class BST{
             }
         }
     }
+
+
+
+    deleteNode(root,value){
+        if(root===null)return root
+
+        if(value<root.value){
+            root.left=this.deleteNode(root.left,value)
+        }
+    }
 }
 const bst=new BST()
 bst.insert(10)

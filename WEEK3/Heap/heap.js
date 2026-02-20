@@ -13,7 +13,7 @@ class Heap{
             if(this.heap[parentIndex]>=this.heap[index]){
                 break
             }
-            this.heap[parentIndex,this.heap[index]]=[this.heap[index],this.heap[parentIndex]]
+            [this.heap[parentIndex],this.heap[index]]=[this.heap[index],this.heap[parentIndex]]
             index=parentIndex
         }
     }

@@ -19,7 +19,7 @@ function findDepth(node){
 }
 
 function checkPerfect(node,depth,level){
-    if(!node)return true
+    if(!node)return true//empty subtree is always valid
     if(node.left===null && node.right===null){
         return depth===level+1
     }
