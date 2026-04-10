@@ -6,21 +6,24 @@ class Node{
     }
 }
 
-function kthSmall(){
-    let res=null
-    let count=0
-    function inorder(node){
-        if(!node||res!==null){
-            inorder(node.left)
-            count++
+function kthSmallest(root, k) {
+    let count = 0
+    let result = null
+
+    function inorder(node) {
+        if (!node || result !== null) return
+
+        inorder(node.left)
+
+        count++
+        if (count === k) {
+            result = node.value
+            return
         }
 
-        if(count===k){
-            res=node.value
-            return 
-        }
-          inorder(node.right)
+        inorder(node.right)
     }
+
     inorder(root)
-    return res 
+    return result
 }

@@ -2,7 +2,7 @@ function thirdLargest(){
     let count=0
     let res=null
     function reversing(node){
-        if(!node ||count>3)return 
+        if(!node ||count>=3)return //if node is full or if we already visited more that 3 nodes
         reversing(node.right)
         count++
         
@@ -13,6 +13,6 @@ function thirdLargest(){
         reversing(node.left)
         
     }
-    reversing(this.root)
+    reversing(root)
     return res
 }

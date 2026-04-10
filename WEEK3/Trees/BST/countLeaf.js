@@ -31,5 +31,4 @@ class TreeNode{
         return countLeafNode(root.left)+countLeafNode(root.right)
     }
 
-
     //if the node which doesnt have child node(left or right node) it is a leaf node    

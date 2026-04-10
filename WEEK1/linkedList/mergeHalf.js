@@ -87,3 +87,26 @@ console.log(l1.print())
 console.log(l1.splitList())
 const merged=l1.mergeList(l1,l2)
 console.log(merged.print())
+
+// function merge(l1,l2){
+
+//     let dummy = new Node(0)
+//     let tail = dummy
+
+//     while(l1 && l2){
+
+//         if(l1.value < l2.value){
+//             tail.next = l1
+//             l1 = l1.next
+//         }else{
+//             tail.next = l2
+//             l2 = l2.next
+//         }
+
+//         tail = tail.next
+//     }
+
+//     tail.next = l1 || l2
+
+//     return dummy.next
+// }
