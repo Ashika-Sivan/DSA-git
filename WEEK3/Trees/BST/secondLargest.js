@@ -6,20 +6,37 @@ class Node{
     }
 }
 
+class Node{
+    constructor(value){
+        this.value=value
+        this.left=null
+        this.right=null
+    }
+}
+
 function secondlarge(root){
-    if(!root && (!root.left && !root.right)){
+
+    if(!root || (!root.left && !root.right)){
         return null
     }
-    if(!root.right &&root.left){
+
+    // no right subtree
+    if(!root.right && root.left){
+
         let curr=root.left
+
         while(curr.right){
             curr=curr.right
         }
+
         return curr.value
     }
+
+    // right child is largest
     if(root.right && !root.right.left && !root.right.right){
         return root.value
     }
+
     return secondlarge(root.right)
 }
 const root = new Node(20);

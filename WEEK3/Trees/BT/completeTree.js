@@ -23,7 +23,7 @@ root2.right.right = new Node(6); // missing left child → not complete
 
 // console.log(isComplete(root2)); // 
 
-console.log(complete(root2)); // ✅ true
+console.log(complete(root2)); 
 
 
 

@@ -52,27 +52,27 @@ class binaryTree{
         }
     }
        preOrder(node=this.root){
-        if(node){
-            console.log(node.value);
-            this.preOrder(node.left)
-            this.preOrder(node.right)
-            
-        }
+            if(node){
+                console.log(node.value);
+                this.preOrder(node.left)
+                this.preOrder(node.right)
+                
+            }
        }
-
        postOrder(node=this.root){
-        if(node){
-            this.postOrder(node.left)
-            this.postOrder(node.right)
-            console.log(node.value)
-        }
+            if(node){
+                this.postOrder(node.left)
+                this.postOrder(node.right)
+                console.log(node.value)
+            }
        }
 
        inOrder(node=this.root){
-        this.inOrder(node.left)
-        console.log(node.value);
-        this.inOrder(node.right)
-        
+        {
+            this.inOrder(node.left)
+            console.log(node.value);
+            this.inOrder(node.right)
+        }
        }
 }
 

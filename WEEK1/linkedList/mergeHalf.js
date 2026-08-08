@@ -110,3 +110,18 @@ console.log(merged.print())
 
 //     return dummy.next
 // }
+
+
+
+
+let arr=[11,22,33,42,51,61,71]
+function remove(arr){
+    let res=[]
+    for(let i=0;i<arr.length;i++){
+        let n=arr[i]%10+Math.floor(arr[i]/10)
+       res.push(arr[i],n)
+        
+    }
+   return res
+}
+console.log(remove(arr))

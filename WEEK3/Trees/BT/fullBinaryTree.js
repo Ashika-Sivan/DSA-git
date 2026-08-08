@@ -68,7 +68,9 @@ function fullBinaryTree(root){
         return true
     }
 
-    if(!root.left||!root.right)return false
-    return fullBinaryTree(root.left)&&fullBinaryTree(root.right)
+    if(root.left!==null && root.right!==null)
+        return fullBinaryTree(root.left)&&fullBinaryTree(root.right)
+    //return true && return false
+    // so that will be false
 }
 

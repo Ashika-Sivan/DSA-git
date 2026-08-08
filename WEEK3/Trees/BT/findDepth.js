@@ -1,6 +1,6 @@
 //MAXIMUM DEPTH
 
-function findDepth(node,level,targetLevel){
+function findDepth(node,level,targetLevel){//level
     if(node===null){
         return 0//reached target level
     }
